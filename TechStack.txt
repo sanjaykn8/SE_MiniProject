@@ -1,0 +1,27 @@
+🖥️ Frontend
+React.js: Interactive UI for users and admin
+
+Axios / Fetch API: To connect frontend with backend
+
+⚙️ Backend
+Flask (Python) or Node.js (Express):
+API development and server-side logic
+
+REST API: Handles communication between client and server
+
+🧠 AI / ML Engine
+Python (Pandas, Scikit-learn):
+Traffic prediction model using past data
+
+🗃️ Database
+MongoDB:
+Stores users, bookings, road maps, traffic data
+
+MongoDB Atlas: Cloud-hosted database
+
+☁️ Deployment
+Frontend: Vercel / Netlify
+
+Backend: Render / Railway
+
+Database: MongoDB Atlas (Cloud)
