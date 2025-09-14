@@ -1,0 +1,106 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --primary: #6D28D9;
+  --accent:  #06B6D4;
+  --bg1: #0f1724;
+  --bg2: #0b1220;
+  --card: rgba(255,255,255,0.03);
+  --muted: rgba(255,255,255,0.65);
+}
+
+*{ box-sizing: border-box; }
+html,body,#root{ height:100%; margin:0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; color:#fff; }
+
+/* Background */
+body {
+  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 60%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Center container */
+.center {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+
+/* Card */
+.card {
+  width:100%;
+  max-width:520px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:18px;
+  padding:28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Title */
+.title { font-size:1.8rem; font-weight:700; margin:0 0 8px; letter-spacing:-0.3px; }
+
+/* Subtitle */
+.subtitle { color:var(--muted); margin-bottom:18px; font-size:0.95rem; }
+
+/* Input */
+.input {
+  width:100%;
+  padding:10px 12px;
+  background:transparent;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+  color:#fff;
+  outline:none;
+  margin-top:6px;
+}
+.input::placeholder { color:rgba(255,255,255,0.4); }
+
+/* Buttons */
+.btn {
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  border:none;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color:white;
+  box-shadow: 0 8px 24px rgba(109,40,217,0.14);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-primary:active{ transform:translateY(1px); }
+.btn-ghost {
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+  color:var(--muted);
+}
+
+/* Card small */
+.small-card {
+  padding:12px;
+  border-radius:10px;
+  background: var(--card);
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+/* Topbar */
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid rgba(255,255,255,0.02);
+}
+
+/* Responsive */
+@media (max-width:640px){
+  .card { padding:18px; margin:0 12px; }
+  .title { font-size:1.4rem; }
+}

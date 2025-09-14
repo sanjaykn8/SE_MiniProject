@@ -1,0 +1,86 @@
+/* src/index.css - Tailwind entry + small component helpers */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global tweaks */
+:root{
+  --bg-grad: linear-gradient(180deg,#0f1724 0%, #0b1220 60%);
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* Use the Inter font everywhere */
+html,body,#root{ font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+/* Reusable component utilities using @apply */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold shadow-soft;
+  background: linear-gradient(90deg,var(--tw-gradient-stops));
+  @apply bg-gradient-to-r from-primary to-accent text-white;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.btn-primary:active{ transform: translateY(1px) scale(0.998); }
+.btn-ghost {
+  @apply px-3 py-1 rounded-lg border border-white/10 text-white/90;
+}
+
+/* Inputs */
+.input {
+  @apply w-full rounded-lg p-2 bg-transparent border border-white/10 placeholder:text-slate-400 text-white outline-none;
+  box-shadow: 0 4px 18px rgba(2,6,23,0.4);
+  transition: box-shadow .12s, border-color .12s;
+}
+.input:focus {
+  @apply border-primary;
+  box-shadow: 0 8px 30px rgba(109,40,217,0.12);
+}
+
+/* Card */
+.card {
+  @apply bg-white/3 rounded-2xl p-5;
+  box-shadow: 0 10px 35px rgba(2,6,23,0.55);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* subtle floating animation for hero/title */
+@keyframes floaty { 0%{transform:translateY(0)} 50%{transform:translateY(-6px)} 100%{transform:translateY(0)} }
+.floaty { animation: floaty 4s ease-in-out infinite; }
+
+/* small utility for small text */
+.text-muted { color: rgba(255,255,255,0.66); font-size: .92rem; }
+
+/* base input utility (if you used the .input class earlier) */
+.input {
+  @apply w-full rounded-lg p-2 bg-transparent border border-white/10 placeholder:text-slate-400 text-white outline-none;
+}
+
+/* styled select with custom arrow and right padding */
+.select {
+  @apply text-white;
+  appearance: none;                /* hide native arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.5rem;          /* room for arrow */
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+}
+
+/* Use a minimal SVG arrow as a data URI so it looks consistent */
+.select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M6 8L0 0h12z'/></svg>");
+}
+
+/* dropdown option colors (note: option styling is limited on some OS/browsers) */
+.select option {
+  background-color: #0f1724;      /* dark option bg */
+  color: #ffffff;                 /* white text */
+}
+
+/* focus ring for accessibility */
+.select:focus {
+  box-shadow: 0 8px 30px rgba(109,40,217,0.12);
+  border-color: rgba(109,40,217,0.85);
+}
