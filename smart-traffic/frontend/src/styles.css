@@ -1,0 +1,79 @@
+/* src/styles.css - UI for Smart Traffic (dark, modern) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg1:#071226;
+  --bg2:#0a1422;
+  --card:#071828;
+  --muted:rgba(255,255,255,0.72);
+  --accent1:#6D28D9;
+  --accent2:#06B6D4;
+}
+
+/* Global */
+html,body,#root{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#fff;background:linear-gradient(180deg,var(--bg1),var(--bg2));-webkit-font-smoothing:antialiased;}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2.25rem;}
+.centered-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem;}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:26px;max-width:720px;width:100%;box-shadow:0 14px 40px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);}
+
+.small-card{padding:16px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);}
+
+/* Title */
+.title{font-size:1.9rem;margin:0 0 6px;font-weight:700;letter-spacing:-0.3px;}
+.mb{margin-bottom:10px;}
+.muted{color:var(--muted);opacity:0.95;}
+.small{font-size:0.92rem;}
+.floaty{animation:floaty 4s ease-in-out infinite}
+
+/* Form */
+.form{display:flex;flex-direction:column;gap:12px;}
+.label{display:block;}
+.label-text{display:block;color:var(--muted);font-size:0.86rem;margin-bottom:6px;}
+.input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff;outline:none;box-shadow:0 8px 22px rgba(2,6,23,0.45);transition:box-shadow .12s,border-color .12s;font-size:0.98rem;}
+.input:focus{box-shadow:0 12px 40px rgba(109,40,217,0.12);border-color:rgba(109,40,217,0.7);}
+
+/* select specifics */
+.select{appearance:none;padding-right:2.6rem;background-position:right 0.8rem center;background-repeat:no-repeat;background-size:1rem;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M6 8L0 0h12z'/></svg>");}
+select option{background:var(--bg2);color:#fff;}
+
+/* Buttons */
+.btn-primary{display:inline-block;padding:10px 16px;border-radius:10px;font-weight:600;color:white;background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:0 12px 30px rgba(109,40,217,0.14);border:none;cursor:pointer;transition:transform .12s ease,box-shadow .12s;}
+.btn-primary:active{transform:translateY(1px);}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer;}
+
+/* layout */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.0));border-bottom:1px solid rgba(255,255,255,0.02);}
+.brand-title{font-weight:700;}
+.top-actions{display:flex;gap:12px;align-items:center;}
+.page-app{min-height:100vh;background:transparent;}
+.app-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;padding:22px;}
+.panel{background:transparent;padding:4px;border-radius:10px;}
+.list{display:flex;flex-direction:column;gap:10px;}
+.list-item{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);}
+.item-title{font-weight:600;}
+.muted.small{font-size:0.82rem;opacity:0.9;}
+
+/* user booking layout */
+.panel-center{padding:22px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.actions{display:flex;gap:12px;margin-top:12px;}
+.result-card{margin-top:14px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);}
+
+/* scrolling list */
+.scroll{max-height:60vh;overflow:auto;padding-right:6px;}
+
+/* misc */
+.link{color:var(--accent2);text-decoration:underline;}
+.error{color:#ff6b6b;background:rgba(255,107,107,0.06);padding:8px;border-radius:8px;margin-top:6px;}
+.full{width:100%;}
+.foot{margin-top:12px;font-size:0.9rem;}
+
+/* animation */
+@keyframes floaty { 0%{transform:translateY(0)} 50%{transform:translateY(-6px)} 100%{transform:translateY(0)} }
+
+/* responsive */
+@media (max-width:900px){
+  .app-grid{grid-template-columns:1fr;}
+  .grid-2{grid-template-columns:1fr;}
+  .card{padding:18px;}
+}
