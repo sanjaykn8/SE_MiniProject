@@ -77,3 +77,16 @@ select option{background:var(--bg2);color:#fff;}
   .grid-2{grid-template-columns:1fr;}
   .card{padding:18px;}
 }
+/* make booking panel expand and let graph use full width */
+.panel-center { display: flex; justify-content: center; padding: 18px; }
+.card { width: 100%; max-width: 1200px; } /* allow wider card for graph */
+.card > h2 { margin-top: 0; }
+
+/* ensure graph container can grow */
+.panel-center .card { min-height: 480px; }
+
+/* for small screens, keep it responsive */
+@media (max-width: 900px) {
+  .card { padding: 16px; max-width: 100%; }
+  .panel-center .card { min-height: 420px; }
+}
